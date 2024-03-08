@@ -1,0 +1,46 @@
+create database if not exists library;
+
+use library;
+
+create table if not exists members (
+id varchar(5) primary key,
+name varchar(30),
+phoneno varchar(10),
+address varchar(50));
+
+insert into members values ('M100', 'Aditi', '9845353535', 'Sangam Nagar, Indore');
+insert into members values ('M101', 'Akriti', '9658723135', 'Vidyanchal Nagar, Indore');
+insert into members values ('M102', 'Arushi', '9884532152', 'Gumashta Nagar, Indore');
+insert into members values ('M103', 'Chiya', '6261035889', 'Sarita Nagar, Indore');
+insert into members values ('M104', 'Dolly', '5896712338', 'Vijay Nagar, Indore');
+insert into members values ('M105', 'Eisha', '9589647236', 'Mahesh Nagar, Indore');
+insert into members values ('M106', 'Harini', '6581236997', 'Ramchand Nagar, Indore');
+insert into members values ('M107', 'Manya', '9487269485', 'Kalani Nagar, Indore');
+insert into members values ('M108', 'Shreya', '7422694114', 'Palhar Nagar, Indore');
+insert into members values ('M109', 'Ragini', '6155798336', 'Mallika Nagar, Indore');
+
+
+create table if not exists books (
+bookid varchar(5) primary key,
+bookname varchar(30),
+genre varchar(10),
+cost integer(4),
+issued_to varchar(20));
+
+insert into books values ('F101', 'The Alchemist', 'Fiction', 350, NULL);
+insert into books values ('R123', 'It Ends With Us', 'Romance', 1000, NULL);
+insert into books values ('R145', 'Call Me By Your Name', 'Romance', 750, NULL);
+insert into books values ('H189', 'The Guns Of August', 'History', 1250, NULL);
+insert into books values ('F149', 'To Kill A Mockingbird', 'Fiction', 800, NULL);
+insert into books values ('H178', 'The Last Mughal', 'History', 550, NULL);
+insert into books values ('R107', 'To all The Boys', 'Romance', 1750, NULL);
+insert into books values ('F108', 'Invisible Man', 'Fiction', 950, NULL);
+insert into books values ('H156', 'Pride And Prejudice', 'History', 400, NULL);
+insert into books values ('F190', 'A Passage To India', 'Fiction', 1100, NULL);
+
+
+create table if not exists issued_books (
+bookid varchar(5) primary key,
+memid varchar(5),
+issuedate date,
+issuecost int(3));
